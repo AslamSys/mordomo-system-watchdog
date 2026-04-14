@@ -28,7 +28,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ghcr.io/aslamsys/mordomo-system-watchdog
+        images: ghcr.io/${{ github.actor }}/mordomo-system-watchdog
         tags: |
           type=ref,event=branch
           type=ref,event=pr
@@ -61,7 +61,7 @@ jobs:
         docker rm mordomo-system-watchdog || true
 
         # Pull latest image
-        docker pull ghcr.io/aslamsys/mordomo-system-watchdog:latest
+        docker pull ghcr.io/${{ github.actor }}/mordomo-system-watchdog:latest
 
         # Run new container
         docker run -d \
@@ -72,6 +72,6 @@ jobs:
           -v /var/run/docker.sock:/var/run/docker.sock \
           -v /sys:/sys:ro \
           -e NATS_URL=nats://localhost:4222 \
-          ghcr.io/aslamsys/mordomo-system-watchdog:latest
+          ghcr.io/${{ github.actor }}/mordomo-system-watchdog:latest
 
         echo "Deployment completed successfully!"
