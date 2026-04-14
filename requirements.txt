@@ -1,0 +1,4 @@
+psutil==5.9.8
+docker==7.0.0
+nats-py==2.7.2
+pydantic==2.6.4
