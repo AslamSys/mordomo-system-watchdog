@@ -18,8 +18,6 @@
 - [mordomo-tts-engine](https://github.com/AslamSys/mordomo-tts-engine)
 - [mordomo-dashboard-ui](https://github.com/AslamSys/mordomo-dashboard-ui)
 - [mordomo-openclaw-agent](https://github.com/AslamSys/mordomo-openclaw-agent)
-- [mordomo-action-dispatcher](https://github.com/AslamSys/mordomo-action-dispatcher)
-- [mordomo-skills-runner](https://github.com/AslamSys/mordomo-skills-runner)
 
 ---
 
