@@ -16,7 +16,6 @@
 - [mordomo-orchestrator](https://github.com/AslamSys/mordomo-orchestrator)
 - [mordomo-brain](https://github.com/AslamSys/mordomo-brain)
 - [mordomo-tts-engine](https://github.com/AslamSys/mordomo-tts-engine)
-- [mordomo-dashboard-ui](https://github.com/AslamSys/mordomo-dashboard-ui)
 - [mordomo-openclaw-agent](https://github.com/AslamSys/mordomo-openclaw-agent)
 
 ---
@@ -67,8 +66,7 @@ Guardião silencioso que monitora a saúde física do Orange Pi 5 (Temperatura, 
 - **Ação:** 
   - Ventoinha em 100% (Máximo).
   - **Sacrifício Tático:** Para containers não-essenciais:
-    1. `dashboard-ui` (Interface Web)
-    2. `source-separation` (Recurso pesado de áudio)
+    1. `source-separation` (Recurso pesado de áudio)
     3. `monitoramento` (Grafana/Prometheus - cegueira temporária aceitável)
   - Notifica usuário: "Estou sobrecarregado, desativando sistemas secundários."
 
@@ -124,7 +122,7 @@ payload: {
 // Alerta de ação corretiva
 subject: "system.action.kill"
 payload: {
-  "container": "dashboard-ui",
+  "container": "source-separation",
   "reason": "OOM_PREVENTION",
   "ram_usage": 92.1
 }
