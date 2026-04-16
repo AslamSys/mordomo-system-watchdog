@@ -70,7 +70,7 @@ class SystemWatchdog:
                     container.stop(timeout=5)
                     
                     # Notifica todos que alguém foi sacrificado
-                    await self.nc.publish("system.action.kill", json.dumps({
+                    await self.nc.publish("mordomo.system.action.kill", json.dumps({
                         "container": container_name,
                         "reason": "OOM_PREVENTION" if ram > 90 else "THERMAL_PREVENTION",
                         "ram_usage": ram
@@ -105,7 +105,7 @@ class SystemWatchdog:
             logger.info(f"Monitor: Temp={temp}°C | RAM={ram}% | DEFCON={level}")
 
             if self.nc.is_connected:
-                await self.nc.publish("system.health.status", json.dumps(payload).encode())
+                await self.nc.publish("mordomo.system.health.status", json.dumps(payload).encode())
 
             if level >= 3:
                 await self.act_on_defcon(level, ram)
